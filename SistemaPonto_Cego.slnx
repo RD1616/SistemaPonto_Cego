@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SistemaPontoCego.Application/SistemaPontoCego.Application.csproj" />
+  <Project Path="SistemaPontoCego.Infrastructure/SistemaPontoCego.Infrastructure.csproj" />
+  <Project Path="SistemaPontoCego.UI/SistemaPontoCego.UI.csproj" />
+  <Project Path="SistemaPonto_Cego.Domain/SistemaPontoCego.Domain.csproj" />
+</Solution>
