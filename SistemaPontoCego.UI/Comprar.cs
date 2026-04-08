@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace SistemaPontoCego.UI
 {
-    public partial class CarrinhoDeCompras : Form
+    public partial class Comprar : Form
     {
-        public CarrinhoDeCompras()
+        public Comprar()
         {
             InitializeComponent();
         }
@@ -26,6 +26,11 @@ namespace SistemaPontoCego.UI
         }
 
         private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Comprar_Load(object sender, EventArgs e)
         {
 
         }

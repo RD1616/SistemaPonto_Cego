@@ -1,6 +1,6 @@
 ﻿namespace SistemaPontoCego.UI
 {
-    partial class VitrineDeProdutos
+    partial class Produtos
     {
         /// <summary>
         /// Required designer variable.
@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             Label label9;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VitrineDeProdutos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produtos));
             panel1 = new Panel();
-            button6 = new Button();
+            btnComprar1 = new Button();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            button5 = new Button();
+            btnComprar3 = new Button();
             label3 = new Label();
             label4 = new Label();
             pictureBox2 = new PictureBox();
             panel3 = new Panel();
-            button4 = new Button();
+            btnComprar4 = new Button();
             label5 = new Label();
             label6 = new Label();
             pictureBox3 = new PictureBox();
             panel4 = new Panel();
-            btnCompra2 = new Button();
+            btnComprar2 = new Button();
             label7 = new Label();
             label8 = new Label();
             pictureBox4 = new PictureBox();
             textBox1 = new TextBox();
             panel5 = new Panel();
-            pictureBox5 = new PictureBox();
             button1 = new Button();
+            pictureBox5 = new PictureBox();
             label9 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -80,7 +80,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button6);
+            panel1.Controls.Add(btnComprar1);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
@@ -89,15 +89,16 @@
             panel1.Size = new Size(266, 165);
             panel1.TabIndex = 1;
             // 
-            // button6
+            // btnComprar1
             // 
-            button6.BackColor = SystemColors.GradientActiveCaption;
-            button6.Location = new Point(181, 123);
-            button6.Name = "button6";
-            button6.Size = new Size(82, 39);
-            button6.TabIndex = 3;
-            button6.Text = "[+]";
-            button6.UseVisualStyleBackColor = false;
+            btnComprar1.BackColor = SystemColors.GradientActiveCaption;
+            btnComprar1.Location = new Point(178, 126);
+            btnComprar1.Name = "btnComprar1";
+            btnComprar1.Size = new Size(82, 39);
+            btnComprar1.TabIndex = 3;
+            btnComprar1.Text = "[+]";
+            btnComprar1.UseVisualStyleBackColor = false;
+            btnComprar1.Click += btnComprar1_Click_2;
             // 
             // label2
             // 
@@ -132,7 +133,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(button5);
+            panel2.Controls.Add(btnComprar3);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox2);
@@ -141,15 +142,16 @@
             panel2.Size = new Size(266, 165);
             panel2.TabIndex = 1;
             // 
-            // button5
+            // btnComprar3
             // 
-            button5.BackColor = SystemColors.GradientActiveCaption;
-            button5.Location = new Point(178, 123);
-            button5.Name = "button5";
-            button5.Size = new Size(82, 39);
-            button5.TabIndex = 3;
-            button5.Text = "[+]";
-            button5.UseVisualStyleBackColor = false;
+            btnComprar3.BackColor = SystemColors.GradientActiveCaption;
+            btnComprar3.Location = new Point(181, 123);
+            btnComprar3.Name = "btnComprar3";
+            btnComprar3.Size = new Size(82, 39);
+            btnComprar3.TabIndex = 3;
+            btnComprar3.Text = "[+]";
+            btnComprar3.UseVisualStyleBackColor = false;
+            btnComprar3.Click += btnComprar1_Click_2;
             // 
             // label3
             // 
@@ -184,7 +186,7 @@
             // panel3
             // 
             panel3.BackColor = SystemColors.ControlLight;
-            panel3.Controls.Add(button4);
+            panel3.Controls.Add(btnComprar4);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
@@ -193,15 +195,16 @@
             panel3.Size = new Size(266, 165);
             panel3.TabIndex = 1;
             // 
-            // button4
+            // btnComprar4
             // 
-            button4.BackColor = SystemColors.GradientActiveCaption;
-            button4.Location = new Point(181, 123);
-            button4.Name = "button4";
-            button4.Size = new Size(82, 39);
-            button4.TabIndex = 3;
-            button4.Text = "[+]";
-            button4.UseVisualStyleBackColor = false;
+            btnComprar4.BackColor = SystemColors.GradientActiveCaption;
+            btnComprar4.Location = new Point(181, 123);
+            btnComprar4.Name = "btnComprar4";
+            btnComprar4.Size = new Size(82, 39);
+            btnComprar4.TabIndex = 3;
+            btnComprar4.Text = "[+]";
+            btnComprar4.UseVisualStyleBackColor = false;
+            btnComprar4.Click += btnComprar1_Click_2;
             // 
             // label5
             // 
@@ -235,7 +238,7 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(btnCompra2);
+            panel4.Controls.Add(btnComprar2);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(label8);
             panel4.Controls.Add(pictureBox4);
@@ -244,15 +247,16 @@
             panel4.Size = new Size(266, 165);
             panel4.TabIndex = 1;
             // 
-            // btnCompra2
+            // btnComprar2
             // 
-            btnCompra2.BackColor = SystemColors.GradientActiveCaption;
-            btnCompra2.Location = new Point(181, 123);
-            btnCompra2.Name = "btnCompra2";
-            btnCompra2.Size = new Size(82, 39);
-            btnCompra2.TabIndex = 3;
-            btnCompra2.Text = "[+]";
-            btnCompra2.UseVisualStyleBackColor = false;
+            btnComprar2.BackColor = SystemColors.GradientActiveCaption;
+            btnComprar2.Location = new Point(181, 123);
+            btnComprar2.Name = "btnComprar2";
+            btnComprar2.Size = new Size(82, 39);
+            btnComprar2.TabIndex = 3;
+            btnComprar2.Text = "[+]";
+            btnComprar2.UseVisualStyleBackColor = false;
+            btnComprar2.Click += btnComprar1_Click_2;
             // 
             // label7
             // 
@@ -306,16 +310,6 @@
             panel5.Size = new Size(624, 81);
             panel5.TabIndex = 4;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(564, 12);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(48, 43);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 6;
-            pictureBox5.TabStop = false;
-            // 
             // button1
             // 
             button1.BackColor = SystemColors.ControlLight;
@@ -326,7 +320,17 @@
             button1.Text = "\U0001f6d2";
             button1.UseVisualStyleBackColor = false;
             // 
-            // VitrineDeProdutos
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(564, 12);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(48, 43);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 6;
+            pictureBox5.TabStop = false;
+            // 
+            // Produtos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -338,9 +342,10 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "VitrineDeProdutos";
+            Name = "Produtos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
+            Load += VitrineDeProdutos_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -388,6 +393,9 @@
         private PictureBox pictureBox5;
         private Button button6;
         private Button button5;
-        private Button button4;
+        private Button btnComprar4;
+        private Button btnComprar1;
+        private Button btnComprar3;
+        private Button btnComprar2;
     }
 }

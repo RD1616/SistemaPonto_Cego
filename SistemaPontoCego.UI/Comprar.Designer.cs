@@ -1,6 +1,6 @@
 ﻿namespace SistemaPontoCego.UI
 {
-    partial class CarrinhoDeCompras
+    partial class Comprar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarrinhoDeCompras));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comprar));
             panel1 = new Panel();
+            label16 = new Label();
+            label17 = new Label();
+            label15 = new Label();
             button1 = new Button();
             label4 = new Label();
             label3 = new Label();
@@ -57,9 +60,6 @@
             label11 = new Label();
             label13 = new Label();
             label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
             button11 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -83,6 +83,39 @@
             panel1.Size = new Size(206, 445);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = SystemColors.ControlLight;
+            label16.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(88, 153);
+            label16.Name = "label16";
+            label16.Size = new Size(73, 21);
+            label16.TabIndex = 14;
+            label16.Text = "R$ 00,00";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.BackColor = SystemColors.ControlLight;
+            label17.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label17.Location = new Point(97, 353);
+            label17.Name = "label17";
+            label17.Size = new Size(82, 21);
+            label17.TabIndex = 14;
+            label17.Text = "R$ 179,70";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = SystemColors.ControlLight;
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(119, 106);
+            label15.Name = "label15";
+            label15.Size = new Size(82, 21);
+            label15.TabIndex = 14;
+            label15.Text = "R$ 179,70";
             // 
             // button1
             // 
@@ -360,39 +393,6 @@
             label14.TabIndex = 14;
             label14.Text = "R$ 74,90";
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = SystemColors.ControlLight;
-            label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(119, 106);
-            label15.Name = "label15";
-            label15.Size = new Size(82, 21);
-            label15.TabIndex = 14;
-            label15.Text = "R$ 179,70";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.BackColor = SystemColors.ControlLight;
-            label16.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(88, 153);
-            label16.Name = "label16";
-            label16.Size = new Size(73, 21);
-            label16.TabIndex = 14;
-            label16.Text = "R$ 00,00";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.BackColor = SystemColors.ControlLight;
-            label17.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(97, 353);
-            label17.Name = "label17";
-            label17.Size = new Size(82, 21);
-            label17.TabIndex = 14;
-            label17.Text = "R$ 179,70";
-            // 
             // button11
             // 
             button11.BackColor = SystemColors.ControlLight;
@@ -403,11 +403,11 @@
             button11.Text = "⬅️";
             button11.UseVisualStyleBackColor = false;
             // 
-            // CarrinhoDeCompras
+            // Comprar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(649, 442);
+            ClientSize = new Size(649, 443);
             Controls.Add(button11);
             Controls.Add(label14);
             Controls.Add(label13);
@@ -433,7 +433,8 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "CarrinhoDeCompras";
+            Name = "Comprar";
+            Load += Comprar_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
