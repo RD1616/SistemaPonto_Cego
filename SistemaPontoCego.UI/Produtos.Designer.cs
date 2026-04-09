@@ -107,7 +107,7 @@
             label2.Name = "label2";
             label2.Size = new Size(82, 15);
             label2.TabIndex = 2;
-            label2.Text = "Valor: R$ 49,90";
+            label2.Text = "Valor: R$ 74,90";
             // 
             // label1
             // 
@@ -160,7 +160,7 @@
             label3.Name = "label3";
             label3.Size = new Size(82, 15);
             label3.TabIndex = 2;
-            label3.Text = "Valor: R$ 84,90";
+            label3.Text = "Valor: R$ 74,90";
             // 
             // label4
             // 
@@ -265,7 +265,7 @@
             label7.Name = "label7";
             label7.Size = new Size(82, 15);
             label7.TabIndex = 2;
-            label7.Text = "Valor: R$ 54,90";
+            label7.Text = "Valor: R$ 74,90";
             // 
             // label8
             // 
@@ -319,6 +319,7 @@
             button1.TabIndex = 4;
             button1.Text = "\U0001f6d2";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // pictureBox5
             // 

@@ -14,7 +14,7 @@ namespace EstiloUrbano.UI
             Application.SetCompatibleTextRenderingDefault(false);
 
             // AQUI É O MOTOR: Ele vai iniciar o programa pela sua tela de Produtos
-            Application.Run(new Cadastro());
+            Application.Run(new Comprar());
         }
     }
 }

@@ -82,7 +82,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(206, 445);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // label16
             // 
@@ -102,9 +101,9 @@
             label17.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.Location = new Point(97, 353);
             label17.Name = "label17";
-            label17.Size = new Size(82, 21);
+            label17.Size = new Size(73, 21);
             label17.TabIndex = 14;
-            label17.Text = "R$ 179,70";
+            label17.Text = "R$ 00,00";
             // 
             // label15
             // 
@@ -113,9 +112,9 @@
             label15.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.Location = new Point(119, 106);
             label15.Name = "label15";
-            label15.Size = new Size(82, 21);
+            label15.Size = new Size(73, 21);
             label15.TabIndex = 14;
-            label15.Text = "R$ 179,70";
+            label15.Text = "R$ 00,00";
             // 
             // button1
             // 
@@ -126,6 +125,7 @@
             button1.TabIndex = 3;
             button1.Text = "Finalizar Pedido";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -224,7 +224,6 @@
             label9.Size = new Size(92, 15);
             label9.TabIndex = 6;
             label9.Text = "Camiseta Básica";
-            label9.Click += label9_Click;
             // 
             // label5
             // 
@@ -284,6 +283,7 @@
             button5.TabIndex = 9;
             button5.Text = "+";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
@@ -293,6 +293,7 @@
             button6.TabIndex = 9;
             button6.Text = "-";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label8
             // 
@@ -303,7 +304,7 @@
             label8.Name = "label8";
             label8.Size = new Size(73, 21);
             label8.TabIndex = 10;
-            label8.Text = "R$ 49,90";
+            label8.Text = "R$ 74,90";
             // 
             // label12
             // 
@@ -323,6 +324,7 @@
             button2.TabIndex = 9;
             button2.Text = "+";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
@@ -332,12 +334,13 @@
             button3.TabIndex = 9;
             button3.Text = "-";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.BackColor = SystemColors.GradientActiveCaption;
-            label10.Location = new Point(196, 261);
+            label10.Location = new Point(198, 142);
             label10.Name = "label10";
             label10.Size = new Size(13, 15);
             label10.TabIndex = 12;
@@ -351,6 +354,7 @@
             button8.TabIndex = 9;
             button8.Text = "+";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
@@ -360,12 +364,13 @@
             button9.TabIndex = 9;
             button9.Text = "-";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.BackColor = SystemColors.GradientActiveCaption;
-            label11.Location = new Point(196, 142);
+            label11.Location = new Point(198, 261);
             label11.Name = "label11";
             label11.Size = new Size(13, 15);
             label11.TabIndex = 12;
@@ -380,7 +385,7 @@
             label13.Name = "label13";
             label13.Size = new Size(73, 21);
             label13.TabIndex = 13;
-            label13.Text = "R$ 54,90";
+            label13.Text = "R$ 74,90";
             // 
             // label14
             // 
@@ -402,6 +407,7 @@
             button11.TabIndex = 15;
             button11.Text = "⬅️";
             button11.UseVisualStyleBackColor = false;
+            button11.Click += button11_Click;
             // 
             // Comprar
             // 
@@ -434,7 +440,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Comprar";
-            Load += Comprar_Load;
+            StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

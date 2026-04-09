@@ -52,7 +52,17 @@ namespace SistemaPontoCego.UI
 
         private void btnComprar1_Click_2(object sender, EventArgs e)
         {
+            // Esta linha faz aparecer a janelinha de aviso
+            MessageBox.Show("O item foi adicionado ao carrinho!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Comprar telaFinalizar = new Comprar();
+
+            this.Hide(); // Esconde a tela de Produtos
+            telaFinalizar.ShowDialog(); // Abre a tela de Comprar e trava o código aqui até ela ser fechada
+            this.Show(); // Quando a tela de Comprar fechar, a de Produtos volta a aparecer
         }
     }
 }

@@ -30,22 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pagamento));
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
+            label2 = new Label();
             pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            label3 = new Label();
+            pictureBox3 = new PictureBox();
+            panel3 = new Panel();
+            label4 = new Label();
             pictureBox2 = new PictureBox();
             button2 = new Button();
-            pictureBox3 = new PictureBox();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -56,77 +57,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(203, 182);
             panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(pictureBox3);
-            panel2.Location = new Point(493, 91);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(203, 182);
-            panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(260, 91);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(203, 182);
-            panel3.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 20);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(155, 92);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(24, 20);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(155, 92);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.GradientActiveCaption;
-            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(290, 301);
-            button2.Name = "button2";
-            button2.Size = new Size(149, 50);
-            button2.TabIndex = 2;
-            button2.Text = "Confirmar Pagamento";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(17, 20);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(170, 92);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.GradientActiveCaption;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(260, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 21);
-            label1.TabIndex = 3;
-            label1.Text = "Total a Pagar: RS 200,00";
-          
+            panel1.Paint += panel1_Paint;
             // 
             // label2
             // 
@@ -139,6 +70,26 @@
             label2.TabIndex = 1;
             label2.Text = "PIX";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(22, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(155, 92);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(pictureBox3);
+            panel2.Location = new Point(493, 91);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(203, 182);
+            panel2.TabIndex = 0;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -150,6 +101,27 @@
             label3.TabIndex = 1;
             label3.Text = "Cartão de Crédito";
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(17, 20);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(170, 92);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Location = new Point(260, 91);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(203, 182);
+            panel3.TabIndex = 0;
+            panel3.Paint += panel3_Paint;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -160,7 +132,51 @@
             label4.Size = new Size(153, 25);
             label4.TabIndex = 1;
             label4.Text = "Boleto Bancario";
-        
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(24, 20);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(155, 92);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.GradientActiveCaption;
+            button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(290, 301);
+            button2.Name = "button2";
+            button2.Size = new Size(149, 50);
+            button2.TabIndex = 2;
+            button2.Text = "Confirmar Pagamento";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.GradientActiveCaption;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(260, 30);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 21);
+            label1.TabIndex = 3;
+            label1.Text = "Total a Pagar: RS 200,00";
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.GradientActiveCaption;
+            button1.Location = new Point(12, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(62, 34);
+            button1.TabIndex = 4;
+            button1.Text = "<--";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Pagamento
             // 
@@ -168,6 +184,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLight;
             ClientSize = new Size(730, 363);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(panel3);
@@ -177,15 +194,16 @@
             Name = "Pagamento";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form4";
+            Load += Pagamento_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -203,5 +221,6 @@
         private Label label2;
         private Label label3;
         private Label label4;
+        private Button button1;
     }
 }

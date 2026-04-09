@@ -305,6 +305,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += CadastrioeLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
