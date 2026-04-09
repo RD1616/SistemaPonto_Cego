@@ -85,25 +85,62 @@ namespace SistemaPontoCego.UI
             }
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            // 1. Validação do '@' no login
-            if (!txtEmailLogin.Text.Contains("@"))
+            // 1. A mesma string de conexão que você usará na aula
+            string conexao = @"Data Source=NOMEDOSERVIDOR;Initial Catalog=SistemaPonto_Cego;Integrated Security=True";
+
+            // 2. Transformamos a senha digitada no Login em SHA256
+            // Isso é necessário porque no banco a senha está criptografada
+            string senhaLoginHash = "";
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                MessageBox.Show("Por favor, insira um e-mail válido para logar.", "Erro de Formato", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(txtSenhaLogin.Text));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                senhaLoginHash = builder.ToString();
             }
 
-            // 2. Comparação com os dados salvos
-            if (txtEmailLogin.Text == emailCadastrado && txtSenhaLogin.Text == senhaCadastrada)
+            // 3. Verificação no Banco de Dados
+            using (SqlConnection conn = new SqlConnection(conexao))
             {
-                MessageBox.Show("Login realizado!");
-                new Produtos().Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Dados incorretos!");
+                try
+                {
+                    conn.Open();
+                    // Buscamos um usuário que tenha o e-mail E a senha hash iguais
+                    string sql = "SELECT Nome FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", txtEmailLogin.Text);
+                        cmd.Parameters.AddWithValue("@Senha", senhaLoginHash);
+
+                        // Executa a consulta e retorna o primeiro resultado (o nome do usuário)
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null)
+                        {
+                            string nomeUsuario = resultado.ToString();
+                            MessageBox.Show($"Bem-vindo, {nomeUsuario}! Login realizado com sucesso.");
+
+                            // Aqui você abriria sua tela principal
+                            // FormPrincipal principal = new FormPrincipal();
+                            // principal.Show();
+                            // this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("E-mail ou senha incorretos.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro técnico: " + ex.Message);
+                }
             }
         }
 
