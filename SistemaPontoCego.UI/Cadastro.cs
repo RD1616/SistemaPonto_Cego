@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
+using System.Security.Cryptography;
+using System.Data.SqlClient; // ESSA LINHA É A MAIS IMPORTANTE
 using System.Windows.Forms;
 
 namespace SistemaPontoCego.UI
@@ -45,30 +43,46 @@ namespace SistemaPontoCego.UI
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            // 1. Verificação de campos vazios
-            if (string.IsNullOrWhiteSpace(txtNomeCadastro.Text) ||
-                 string.IsNullOrWhiteSpace(txtEmailCadastro.Text) ||
-                 string.IsNullOrWhiteSpace(txtCpf.Text) ||
-                 string.IsNullOrWhiteSpace(txtSenhaCadastro.Text))
+            // 1. String de Conexão (Ajuste o 'Data Source' para o seu servidor)
+            string conexao = @"Data Source=SEU_SERVIDOR;Initial Catalog=SistemaPonto_Cego;Integrated Security=True";
+
+            // 2. Criptografia SHA256 (Transformando a senha aqui mesmo)
+            string senhaHash = "";
+            using (SHA256 sha256Hash = SHA256.Create())
             {
-                MessageBox.Show("Todos os campos são obrigatórios!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(txtSenhaCadastro.Text));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                senhaHash = builder.ToString();
             }
 
-            // 2. Validação do '@' no e-mail do cadastro
-            if (!txtEmailCadastro.Text.Contains("@"))
+            // 3. Inserindo no Banco de Dados
+            using (SqlConnection conn = new SqlConnection(conexao))
             {
-                MessageBox.Show("O e-mail de cadastro precisa ser válido (conter '@')!", "E-mail Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmailCadastro.Focus();
-                return;
+                try
+                {
+                    conn.Open();
+                    string sql = "INSERT INTO Usuarios (Nome, Email, Senha, Ativo) VALUES (@Nome, @Email, @Senha, 1)";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        // Passando os valores das TextBoxes
+                        cmd.Parameters.AddWithValue("@Nome", txtNomeCadastro.Text);
+                        cmd.Parameters.AddWithValue("@Email", txtEmailCadastro.Text);
+                        cmd.Parameters.AddWithValue("@Senha", senhaHash); // Gravando o HASH, não a senha limpa!
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Usuário cadastrado com sucesso usando SHA256!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao conectar no banco: " + ex.Message);
+                }
             }
-
-            // ... (resto do seu código de salvar nas variáveis globais e MessageBox de sucesso)
-            emailCadastrado = txtEmailCadastro.Text;
-            senhaCadastrada = txtSenhaCadastro.Text;
-
-            MessageBox.Show("Cadastrado com sucesso!");
-            // (Limpar campos...)
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
